@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>TV in a Giphy</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+  <link href="assets/css/GifTastic.css"rel="stylesheet">
+
+
+  
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>TV in a Giphy</h1>
+
+    <!-- Rendered Buttons will get Dumped Here  -->
+    <div id="shows-buttons"></div>
+
+    <form id="show-form">
+      <label for="show-input">Add a TV Show</label>
+      <input type="text" id="show-input">
+
+      <!-- Button triggers new TV Show to be added -->
+      <input id="add-show" type="submit" value="SUBMIT">
+    </form>
+
+    <!-- Gifs will get Dumped Here  -->
+     <span id="gif-display">
+       <div id="shows"></div></span>
+  </div>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+
+  $(document).ready(function() {
+
+    // Initial array of TV shows
+      var topics = ["The Wire", "Star Trek Next Generation", "Luke Cage", "Breaking Bad", "Better Call Saul", "Downton Abbey", "Boardwalk Empire", "Seinfeld" ]
+
+    function giphySearch() {
+
+      // Storing our giphy API URL for a random cat image
+      var tvShow = $(this).attr("show-name")
+      var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + tvShow + "&api_key=AA65TERZHD1EN07ICVQ9lcNpU61btFnN&limit=10";
+
+      // Perfoming an AJAX GET request to our queryURL
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).done(function(response){
+
+      // After the data from the AJAX request comes back
+
+      $("#shows").empty();
+
+      var searchResult = response.data;
+
+      for (var i = 0; i <searchResult.length; i++){
+        var showDiv = $("<div class='inputTopic'>");
+
+        var rating = searchResult[i].rating;
+        var ratingText = $("<p>").text("Rating: " + rating);
+
+        var gifStill = searchResult[i].images.fixed_height_still.url;
+        var gifPlay = searchResult[i].images.fixed_height.url;
+
+        var gif = $("<img>").addClass("gif").attr("src", gifStill).attr("data-still", gifStill).attr("data-animate", gifPlay).attr("data-state", "still" );
+        showDiv.append(gif);
+        showDiv.append(ratingText);
+
+        $("#shows").append(showDiv);
+      }
+
+
+
+      $(".gif").on("click", function(){
+        var state = $(this).attr("data-state");
+
+        if (state === "still"){
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        }
+        else{
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
+    });
+
+  }
+
+
+      // Function for displaying movie data
+      function renderButtons() {
+
+        // Deleting the shows prior to adding new shows
+        // (this is necessary otherwise you will have repeat buttons)
+        $("#shows-buttons").empty();
+
+        // Looping through the array of tv shows
+        for (var i = 0; i < topics.length; i++) {
+
+          // Then dynamicaly generating buttons for tv show in array
+          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+          var a = $("<button>");
+          // Adding a class of show-button to our button
+          a.addClass("show");
+          // Adding a data-attribute
+          a.attr("show-name", topics[i]);
+          // Providing the initial button text
+          a.text(topics[i]);
+          // Adding the button to the shows-buttons div
+          $("#shows-buttons").append(a);
+        }
+      }
+
+      // This function handles events where a movie button is clicked
+      $("#add-show").on("click", function(event) {
+        event.preventDefault();
+        // This line grabs the input from the textbox
+        var tvShow = $("#show-input").val().trim();
+
+        // Adding movie from the textbox to our array
+        topics.push(tvShow);
+
+        $("#show-input").val(" ");
+
+        // Calling renderButtons which handles the processing of our show array
+        renderButtons();
+      });
+
+      // Adding a click event listener to all elements with a class of "show-button 
+      $(document).on("click", ".show", giphySearch);
+
+      // Calling the renderButtons function to display the initial buttons
+      renderButtons();
+
+    });
+
+
+
+    </script>
+  </div>
+</body>
+
+</html>
