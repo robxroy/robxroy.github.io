@@ -6,6 +6,8 @@
   <title>TV in a Giphy</title>
   <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
   <link href="assets/css/GifTastic.css"rel="stylesheet">
+  <link href="assets/css/hover.css" rel="stylesheet" media="all">
+
 
 
   
@@ -30,6 +32,9 @@
     <!-- Gifs will get Dumped Here  -->
      <span id="gif-display">
        <div id="shows"></div></span>
+
+       <div id="rxr-link"><a href="portfolio.html">RXR</a>
+
   </div>
 
 
@@ -111,7 +116,7 @@
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
           var a = $("<button>");
           // Adding a class of show-button to our button
-          a.addClass("show");
+          a.addClass("show hvr-grow-rotate");
           // Adding a data-attribute
           a.attr("show-name", topics[i]);
           // Providing the initial button text
