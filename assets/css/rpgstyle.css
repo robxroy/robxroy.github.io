@@ -55,6 +55,9 @@ body {
   
   #index-link {
     text-align: right;
+    position: fixed; 
+    bottom:0%;
+    right: 20px;
   }
   
   .character {
