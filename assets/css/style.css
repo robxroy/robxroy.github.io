@@ -69,7 +69,13 @@ li {
     margin: 20 auto 20 auto;
     padding: 20px;
     overflow: auto;
+    max-width:960px;
 }
+
+.main-section{
+    max-width:960px;
+}
+
 
 .box {
     background-color: #ffffff;
@@ -119,7 +125,7 @@ p {
     color: white;
     display: inline-block;
     margin: 20px;
-    max-width: 200px;
+    max-width: 600px;
     overflow: hidden;
     position: relative;
     text-align: center;
