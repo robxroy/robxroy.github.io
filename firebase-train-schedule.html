@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/train-style.css">
+    <!--<script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="assets/javascript/moment.js"></script>
+
+    <title>Train Schedule</title>
+</head>
+<body>
+
+
+
+<div class="container">
+
+    <div class="jumbotron">
+        <h1 class="text-center">Train Time Anytime</h1>
+        <h3 class="text-center">Choo Choo. Chee Chee.</h3>
+    </div>
+
+    <!-- Posted train Schedule-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                    <h5 class="card-header text-white bg-primary mb-3"><strong>Current Train Schedule</strong></h5>
+                <div class="card-body">
+                    <table class="table table-hover" id="tableSchedule">
+                        <thead>
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Next Arrival</th>
+                                <th>Frequency (min)</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+            <div class="card">
+                    <h5 class="card-header text-white bg-primary mb-3"><strong>Add Trains</strong></h5>
+                    <div class="card-body">
+
+            <!--FORM-->
+            <form autocomplete="off">
+                <div class="form-group">
+                    <label for="">Train Name</label>
+                    <input type="text" class="form-control" id="inputTrainName" placeholder="California Zephyr">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Destination</label>
+                    <input type="text" class="form-control" id="inputDestination" placeholder="Paradise">
+                </div>
+                
+                <div class="form-group">
+                    <label for="">First Train Time(HH:mm - military time)</label>
+                    <input type="text" class="form-control" id="inputFirstTime" placeholder="17:00">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Frequency (min)</label>
+                    <input type="text" class="form-control" id="inputFrequency" placeholder="90"> 
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="inputTrainButton">SUBMIT</button>
+            </form>
+            
+        </div>
+
+    </div>
+    <br>
+
+</div>
+    <script src="train-logic.js">
+        </script>
+    
+</body>
+</html>
