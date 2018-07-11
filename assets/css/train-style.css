@@ -68,4 +68,21 @@ header.masthead {
     font-family: 'Patua One', cursive;
 }
 
+#rxr-link {
+    float: right;
+    font-family: 'Cinzel', serif;
+}
+
+a:link {
+    color:black;
+}
+
+a:active {
+    color: white;
+
+}
+
+a:visited {
+    color: #868e96;
+}
 
