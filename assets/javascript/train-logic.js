@@ -96,7 +96,7 @@
                 // );
 
                 // Append the new row to the table
-                $("tableSchedule > tbody").append(newRow);
+                $("#tableSchedule > tbody").append(newRow);
                 
               });
 
