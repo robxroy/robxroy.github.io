@@ -17,7 +17,7 @@
 
 
           // 
-          $("inputTrainButton").on("click", function(){
+          $("#inputTrainButton").on("click", function(){
               var trainName = $("#inputTrainName").val().trim();
               var destination = $("#inputDestination").val().trim();
               var firstTrainTime =moment($("#inputFirstTime").val().trim(), "HH:mm").format("HH:mm");
