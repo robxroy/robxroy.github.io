@@ -11,19 +11,19 @@
           
     var database = firebase.database();
  
-          //set current time thruy moment JS
+          //set current time thru moment JS
           var currentTime = moment().format("HH:mm");
               console.log("CURRENT TIME: " + currentTime);
 
 
-          // 
+          // add train button function
           $("#inputTrainButton").on("click", function(){
               var trainName = $("#inputTrainName").val().trim();
               var destination = $("#inputDestination").val().trim();
               var firstTrainTime =moment($("#inputFirstTime").val().trim(), "HH:mm").format("HH:mm");
               var frequency = $("#inputFrequency").val().trim();
 
-              
+              //variable to hold train info
               var newTrain = {
                   name: trainName,
                   dest: destination,
@@ -43,16 +43,9 @@
               $("#inputFrequency").val("");
               return false;
           });
- 
-
-
-
-
-
-
 
         // function for adding new trains to the database
-          database.on("child_added", function(childSnapshot) {
+          database.ref().on("child_added", function(childSnapshot) {
               console.log(childSnapshot.val());
 
               // variables for firebase snapshots to be stored in
@@ -96,7 +89,7 @@
                 // );
 
                 // Append the new row to the table
-                $("tableSchedule > tbody").append(newRow);
+                $("#tableSchedule > tbody").append(newRow);
                 
               });
 
