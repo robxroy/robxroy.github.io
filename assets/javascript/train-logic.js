@@ -1,14 +1,15 @@
-//set up fire base
+  // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyByNmGGaeyToEysdYSZV_WCWmjpa52dnxA",
-    authDomain: "train-times-7d5fd.firebaseapp.com",
-    databaseURL: "https://train-times-7d5fd.firebaseio.com",
-    projectId: "train-times-7d5fd",
-    storageBucket: "train-times-7d5fd.appspot.com",
-    messagingSenderId: "753416560881"
+    apiKey: "AIzaSyCSsv6eWNULm3LUiDwhUkcSGbHoKgDKEhQ",
+    authDomain: "train-5f422.firebaseapp.com",
+    databaseURL: "https://train-5f422.firebaseio.com",
+    projectId: "train-5f422",
+    storageBucket: "train-5f422.appspot.com",
+    messagingSenderId: "567681839872"
   };
   firebase.initializeApp(config);
-          var database = firebase.database();
+          
+    var database = firebase.database();
  
           //set current time thruy moment JS
           var currentTime = moment().format("HH:mm");
@@ -43,26 +44,47 @@
               return false;
           });
  
-          database.ref().on("child_added", function(childSnapshot) {
+
+
+
+
+
+
+
+        // function for adding new trains to the database
+          database.on("child_added", function(childSnapshot) {
               console.log(childSnapshot.val());
 
+              // variables for firebase snapshots to be stored in
               var trainName = childSnapshot.val().name;
               var destination = childSnapshot.val().dest;
               var firstTrainTime = childSnapshot.val().first;
               var frequency = childSnapshot.val().freq;
-              
+
+
+              //pull first time from moment.js
               var firstTrainHourMinute = moment(firstTrainTime, "HH:mm");             
               console.log(firstTrainHourMinute);
 
+              //number of minutes between time
               var timeDifference = moment().diff(moment(firstTrainHourMinute, "minutes"))
               console.log(firstTrainHourMinute);
               console.log("Difference in Time: " + timeDifference);
 
+              // minutes remaining between frequency and time difference
               var timeRemainder = timeDifference % frequency;
               console.log(timeRemainder);
+
+                //subtracting remainder from frequency
               var minutesUntilTrain = frequency - timeRemainder;
-              var nextTrain = moment().add(minutesUntilTrain, "minutes").format("HH:mm");
-                 $("#tableSchedule").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + nextTrain + "</td><td>" + frequency + "</td><td>" + minutesUntilTrain + "</td><tr>");
+
+              // variables to hold next train information
+              var nextTrain = moment().add(minutesUntilTrain, "minutes");
+              var nextTrainTime = moment(nextTrain).format("HH:mm");
+
+
+
+                 $("#tableSchedule").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + nextTrainTime + "</td><td>" + frequency + "</td><td>" + minutesUntilTrain + "</td><tr>");
                   // Create the new row
 
                 //   var newRow = $("<tr>").append(
