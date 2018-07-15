@@ -1,133 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-               
-    <link rel="stylesheet" href="http://getbootstrap.com/docs/4.1/examples/sticky-footer/sticky-footer.css">
-               
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rob X. Roy - Web Development</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="assets/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="assets/css/hover.css" rel="stylesheet">
     <link rel="icon" href="assets/images/frontpage/portrait-logo.png">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <title> Rob X. Roy</title>
-            
   </head>
-                
-  <body background="assets/images/frontpage/background.jpg">
-    <header background="assets/images/frontpage/background-header.png">
-    <div class="navigation">
-      <ul>
-                                          
-                      <li id="robRoy">Rob X. Roy</li>
-                      <li><a href="#about">About</a></li>
-                      <li><a href="#portfolio">Portfolio</a></li>
-                      <li><a href="#contact">Contact</a></li>                                        </ul>
-                                </div>
-                              </header>
 
-  <div><p></p></div>  
+  <body id="page-top">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#page-top">Rob X. Roy</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#page-top">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
 
-	<div id="about" class="section md-padding">
+    <!-- Header -->
+    <header class="masthead d-flex">
+      <div class="container text-center my-auto">
+        <img src="assets/images/frontpage/robroy-face.png" id="rob-picture">
+        <h1 class="mb-1" id="masthead-name">Rob X. Roy</h1>
+        <h3 class="mb-5">
+          <em>Full Stack Web Developer</em>
+        </h3>
+        <a class="btn btn-dark btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+      </div>
+      <div class="overlay"></div>
+    </header>
 
-  <section class="main-section">
-    <div class="container d-flex">
+    <!-- About -->
+    <section class="content-section bg-light" id="about">
+      <div class="container text-center">
         <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <p>Rob X. Roy is a Full Stack Web Development student at the University of Pennsylvania College of Liberal and Professional Studies.
 
+              Rob has a degree in English from the University of California -- Davis, Rob was a radio DJ, an ice cream man, and a community activist. </p>
 
-            <!-- <div class="col-md-2 d-flex align-items-center" id="bio-photo"><div id="bio-photo-background"></div>
-              <img class="img img-thumbnail" src="assets/images/frontpage/portrait-logo.png" alt="Rob X. Roy">
-            </div><!-- end image div -->
+              <p>Rob has six years of experience teaching English abroad. He recently moved to Philadelphia to live with his wife, who is from the city, and --like Rob -- also taught in South Korea.
+              Rob's hobbies include storytelling, songwriting, citizen activism, and travel.</p>
 
-            <div class="col-lg-10 wrapper multicol" id="bio-info">
-
-                <h1>About Rob</h1>
-        
-                <p><img class="img img-thumbnail" src="assets/images/frontpage/portrait-logo.png" alt="Rob X. Roy">Rob X. Roy is a Full Stack Web Development student at the University of Pennsylvania College of Liberal and Professional Studies. Rob is from Northern California is excited to discuss history, neighborhood-level diversity-indexes, and cinema.
-                While achieving a degree in English from the University of California -- Davis, Rob was a radio DJ, an ice cream man, and a community activist. </p>
-  
-                <p>Rob has six years of experience teaching English abroad. He recently moved to Philadelphia to live with his wife, who is from the city, and --like Rob -- also taught in South Korea.
-                Rob's hobbies include storytelling, songwriting, citizen activism, and travel (having been to more than 20 countries).</p>
-  
-                <p>Rob wants to use a knowledge of coding to build a career in the field as well as help provide greater access to civic participation and pass along this knowledge to communities who do not have as easy access to the foundations of web development. 
-                </p>
-            </div><!--end bio div-->
-            
-            <div class="col-md-2 align-items-center" id="bio-social">
-                            <h3 id="social-links"><br>Links</h3>
-                            <ul>
-                              <li class="left-align"><a href="https://github.com/RobXRoy"><img class="icon" src="assets/images/frontpage/github.png" alt="GitHub Profile"></a></li>
-                              <li class="left-align"><a href="https://www.linkedin.com/in/robxroy/"><img class="icon" src="assets/images/frontpage/linkedin.png" alt="LinkedIn Profile"></a></li>
-                            </ul>
-                </div><!--end link div-->
-        
-    </div>
-</section>
-
-</div> <!-- end about -->
-
-
-
-<div id="portfolio"><h2>Portfolio</h2>
-    <div class="card-columns">
-        <div class="card">
-          <img class="card-img-top" src="assets/images/gallery/hangman.png" alt="Hangman">
-          <div class="card-body">
-            <h5 class="card-title">Hangman</h5>
-            <p class="card-text">A javascript version of hangman</p>
+              <p>Rob wants to use a knowledge of coding to build a career in the field as well as help provide greater access to civic participation and pass along this knowledge to communities who do not have as easy access to the foundations of web development. 
+              </p>
           </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="assets/images/gallery/borderwars.png" alt="Border Wars RPG">
-          <div class="card-body">
-            <h5 class="card-title">Border Wars RPG</h5>
-            <p class="card-text">An RPG pitting child refugees and ayslym seakers </p>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section class="content-section" id="portfolio">
+      <div class="container">
+        <div class="content-section-heading text-center">
+          <h3 class="text-secondary mb-0">Portfolio</h3>
+          <h2 class="mb-5">Recent Projects</h2>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="https://robxroy.github.io/firebase-train-schedule.html">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Train Time!</h2>
+                  <p class="mb-0 hvr-fade">A firebase utilizing DIY train schedule.</p>
+                </span>
+              </span>
+              <img class="img-fluid" src="assets/images/gallery/trainschedule.png" alt="Firebase Train schedule">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="https://robxroy.github.io/GifTastic.html">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Gif Tastic!</h2>
+                  <p class="mb-0 hvr-fade">A TV themed gif search utilizing the Giphy APi.</p>
+                </span>
+              </span>
+              <img class="img-fluid" src="assets/images/gallery/giftastic.png" alt="Giphy Search">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="https://robxroy.github.io/rpg.html">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Border Wars</h2>
+                  <p class="mb-0 hvr-fade">A javascipt role playing game with a current events theme.</p>
+                </span>
+              </span>
+              <img class="img-fluid" src="assets/images/gallery/borderwars.png" alt="Boder Wars RBP">
+            </a>
+          </div>
+          <div class="col-lg-6">
+            <a class="portfolio-item" href="https://angela-andrews.github.io/upenn-project1/">
+              <span class="caption">
+                <span class="caption-content">
+                  <h2>Eat Meet!</h2>
+                  <p class="mb-0 hvr-fade">An app helping groups of friends democratically choose for their most preferred restaurant option.</p>
+                </span>
+              </span>
+              <img class="img-fluid" src="assets/images/gallery/eatmeet.png" alt="Eat Meet App">
+            </a>
           </div>
         </div>
-        <div class="card">
-          <img class="card-img-top" src="assets/images/gallery/triviagame.png" alt="Serious Trivia">
-          <div class="card-body">
-            <h5 class="card-title">Serious Trivia</h5>
-            <p class="card-text"> A timed trivia game about wealth disparity</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+
+
+    <section class="content-section" id="contact">
+      <div class="container">
+          <div class="content-section-heading text-center">
+            <h3 class="text-secondary mb-0">Contact</h3>
+            <h2 class="mb-5">Say Hello</h2>
           </div>
-          </div>
-          <div class="card">
-              <img class="card-img-top" src="assets/images/gallery/trainschedule.png" alt="Train Schedule">
-              <div class="card-body">
-                <h5 class="card-title">Train Schedule</h5>
-                <p class="card-text">A create-you-own scheduling system utilizing firebase and moment.js. </p>
-              </div>
+
+            <form>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Name</label>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Bruce Springsteen">
+                </div>
+                <div class="form-group">
+                        <label for="exampleFormControlInput1">Email   </label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="TheBoss@JungleLand.com">
+                      </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Message</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="I come from down in the valley..."></textarea>
+                </div>
+                <a href="mailto:contactrobroy@gmail.com" class="btn btn-xl btn-dark"> Yo Rob!</a>
+              </form>
             </div>
-            <div class="card">
-              <img class="card-img-top" src="assets/images/gallery/eatmeet.png" alt="Eat Meet">
-              <div class="card-body">
-                <h5 class="card-title">Eat Meet</h5>
-                <p class="card-text">A firebase application allows groups of people to decide on where to eat via ranked voting.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img class="card-img-top" src="assets/images/gallery/giftastic.png" alt="Giftastic">
-              <div class="card-body">
-                <h5 class="card-title">Giftastic</h5>
-                <p class="card-text">A Gif search utilization Giphy's API. </p>
-              </div>
-        </div>
+    </section>
 
-      </div> <!-- end portfolio-->
-    
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="https://www.linkedin.com/in/robxroy/">
+              <i class="icon-social-linkedin"></i>
+            </a>
+          </li>
+          <!-- <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-twitter"></i>
+            </a>
+          </li> -->
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white" href="https://github.com/robxroy/">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; Rob X. Roy 2018</p>
+      </div>
+    </footer>
 
-    <div>
-<footer>
-  <small>Copyright &copy; </small>
-</footer>
-</div>
-    </body>
-    
-    </html>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="assets/javascript/stylish-portfolio.js"></script>
+
+  </body>
+
+</html>
